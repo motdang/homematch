@@ -102,7 +102,7 @@ ${robots ? html`<meta name="robots" content="${robots}">` : ''}
 ${canon ? html`<link rel="canonical" href="${canon}">` : ''}
 <meta property="og:title" content="${fullTitle}">
 ${description ? html`<meta property="og:description" content="${description}">` : ''}
-${ogImage || config.ogImage ? html`<meta property="og:image" content="${ogImage || config.ogImage}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">` : ''}
+${ogImage || config.ogImage ? html`<meta property="og:image" content="${ogImage || config.ogImage}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">${!ogImage && config.ogImageAlt ? html`<meta property="og:image:alt" content="${config.ogImageAlt}">` : ''}` : ''}
 ${canon ? html`<meta property="og:url" content="${canon}">` : ''}
 <meta name="color-scheme" content="${scheme}">
 <style>${raw(BASE_CSS)}</style>
